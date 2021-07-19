@@ -1,0 +1,108 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 750px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"borderWidthSelected": 20, "color": "lightsteelblue", "font": {"color": "navy"}, "group": 5, "id": "Business Products and Tools", "label": "Business Products and Tools", "labelHighlightBold": true, "level": 5, "physics": true, "shape": "dot", "size": 6, "title": "Team: Business Products and Tools\u003cbr\u003eLeader: Tim Wright\u003cbr\u003eLevel: 5"}, {"borderWidthSelected": 20, "color": "mediumspringgreen", "font": {"color": "navy"}, "id": "Portfolio Stategy, Analytics, and Infrastructure", "label": "Portfolio Stategy, Analytics, and Infrastructure", "labelHighlightBold": true, "level": 4, "physics": true, "shape": "dot", "size": 9, "title": "Team: Portfolio Stategy, Analytics, and Infrastructure\u003cbr\u003eLeader: Steve De Salvo\u003cbr\u003eLevel: 4\u003cbr\u003eHigh Level Description of Team:\u003cbr\u003eThe PSAI Team centrally manages IP\u2019s analytics, including stress testing, s\u003cbr\u003eensitivity analytics, and optimizing investment decision making within capi\u003cbr\u003etal, liquidity and risk management constraints. The team also provides stan\u003cbr\u003edardized processes and tools for use across IP."}, {"color": "lightsteelblue", "font": {"color": "navy"}, "group": 5, "id": "CLO Portfolio", "label": "CLO Portfolio", "level": 5, "physics": true, "shape": "dot", "size": 6, "title": "Team: CLO Portfolio\u003cbr\u003eLeader: Cecilia Fork\u003cbr\u003eLevel: 5\u003cbr\u003eCo-Team(s): Portfolio Strategy, Analytics, and Infrastructure"}, {"color": "mediumspringgreen", "font": {"color": "navy"}, "id": "Portfolio Strategy, Analytics, and Infrastructure", "label": "Portfolio Strategy, Analytics, and Infrastructure", "level": 4, "physics": true, "shape": "dot", "size": 9, "title": "Team: Portfolio Strategy, Analytics, and Infrastructure\u003cbr\u003eLeader: Cecilia Fork\u003cbr\u003eLevel: 4\u003cbr\u003eCo-Team(s): IP Hedge, Portfolio Strategy, Analytics, and Infrastructure, Derivatives Trading and Hedging Strategy\u003cbr\u003eHigh Level Description of Team:\u003cbr\u003eThe PSAI Team centrally manages IP\u2019s analytics, including stress testing, s\u003cbr\u003eensitivity analytics, and optimizing investment decision making within capi\u003cbr\u003etal, liquidity and risk management constraints. The team also provides stan\u003cbr\u003edardized processes and tools for use across IP."}, {"borderWidthSelected": 20, "color": "mediumspringgreen", "font": {"color": "navy"}, "id": "Credit Investment Portfolio", "label": "Credit Investment Portfolio", "labelHighlightBold": true, "level": 4, "physics": true, "shape": "dot", "size": 9, "title": "Team: Credit Investment Portfolio\u003cbr\u003eLeader: Cecilia Fork\u003cbr\u003eLevel: 4\u003cbr\u003eHigh Level Description of Team:\u003cbr\u003eThe CIP team centrally manages all credit-sensitive, fixed income investmen\u003cbr\u003ets, solutions and risk management activities for our public-side portfolio.\u003cbr\u003e As a result of the November IP reorg, CIP is now aligned into five asset c\u003cbr\u003elass teams: the Municipals - General Obligations team, which will manage CI\u003cbr\u003eP\u0027s GO Muni portfolio; the Municipals - Revenue-Backed team, which will man\u003cbr\u003eage CIP\u0027s revenue-backed Muni portfolio; the CLO team, which will manage CI\u003cbr\u003eP\u0027s CLO portfolio; the Other ABS team, which will manage CIP\u0027s non-CLO stru\u003cbr\u003ectured products portfolios; and the CLO Underwriting team, which will manag\u003cbr\u003ee ongoing CLO collateral surveillance and the credit monitoring of the Corp\u003cbr\u003eorates portfolio as it naturally runs off over time."}, {"color": "lightsteelblue", "font": {"color": "navy"}, "group": 5, "id": "CLO Underwriting", "label": "CLO Underwriting", "level": 5, "physics": true, "shape": "dot", "size": 6, "title": "Team: CLO Underwriting\u003cbr\u003eLeader: Casey Zeman\u003cbr\u003eLevel: 5\u003cbr\u003eCo-Team(s): Portfolio Strategy, Analytics, and Infrastructure"}, {"color": "lightsteelblue", "font": {"color": "navy"}, "id": "IP Hedge", "label": "IP Hedge", "level": 5, "physics": true, "shape": "dot", "size": 21, "title": "Team: IP Hedge\u003cbr\u003eLeader: Tim Mullins\u003cbr\u003eLevel: 2\u003cbr\u003eCo-Team(s): Infrastructure"}, {"color": "mediumspringgreen", "font": {"color": "navy"}, "id": "Derivatives Trading and Hedging Strategy", "label": "Derivatives Trading and Hedging Strategy", "level": 4, "physics": true, "shape": "dot", "size": 21, "title": "Team: Derivatives Trading and Hedging Strategy\u003cbr\u003eLeader: Tim Mullins\u003cbr\u003eLevel: 2\u003cbr\u003eCo-Team(s): Infrastructure\u003cbr\u003eHigh Level Description of Team:\u003cbr\u003eTeam focuses on derivatives strategy and execution, and serves as a key par\u003cbr\u003etner to CIP, providing macro-level input on portfolio management activities\u003cbr\u003e."}, {"borderWidthSelected": 20, "color": "teal", "font": {"color": "navy"}, "id": "Investment Portfolio", "label": "Investment Portfolio", "labelHighlightBold": true, "level": 2, "physics": true, "shape": "dot", "size": 21, "title": "Team: Investment Portfolio\u003cbr\u003eLeader: Tim Mullins\u003cbr\u003eLevel: 2\u003cbr\u003eHigh Level Description of Team:\u003cbr\u003eThe Wells Fargo Investment Portfolio (\u201cIP\u201d) comprises the Credit Investment\u003cbr\u003e Portfolio (CIP), the Macro Investment Portfolio (MIP), and Reinsurance bus\u003cbr\u003einess. Reporting to Enterprise Finance, IP manages the entire $454.3B1portf\u003cbr\u003eolio of AFS and HTM investments and cash"}, {"borderWidthSelected": 20, "color": "blue", "font": {"color": "navy"}, "id": "Wholesale Banking", "label": "Wholesale Banking", "labelHighlightBold": true, "level": 1, "physics": true, "shape": "dot", "size": 30, "title": "Team: Wholesale Banking\u003cbr\u003eLeader: Perry Pelos\u003cbr\u003eLevel: 1"}, {"borderWidthSelected": 20, "color": "lightsteelblue", "font": {"color": "navy"}, "id": "Municipals - General Obligations", "label": "Municipals - General Obligations", "labelHighlightBold": true, "level": 5, "physics": true, "shape": "dot", "size": 6, "title": "Team: Municipals - General Obligations\u003cbr\u003eLeader: Matt Koch\u003cbr\u003eLevel: 5"}, {"borderWidthSelected": 20, "color": "lightsteelblue", "font": {"color": "navy"}, "id": "Municipals - Revenue Back", "label": "Municipals - Revenue Back", "labelHighlightBold": true, "level": 5, "physics": true, "shape": "dot", "size": 6, "title": "Team: Municipals - Revenue Back\u003cbr\u003eLeader: Matt Pielert\u003cbr\u003eLevel: 5"}, {"borderWidthSelected": 20, "color": "lightsteelblue", "font": {"color": "navy"}, "id": "Other ABS", "label": "Other ABS", "labelHighlightBold": true, "level": 5, "physics": true, "shape": "dot", "size": 6, "title": "Team: Other ABS\u003cbr\u003eLeader: Fox Walton\u003cbr\u003eLevel: 5"}, {"borderWidthSelected": 20, "color": "cyan", "font": {"color": "navy"}, "id": "Macro Investment Portfolio", "label": "Macro Investment Portfolio", "labelHighlightBold": true, "level": 3, "physics": true, "shape": "dot", "size": 14, "title": "Team: Macro Investment Portfolio\u003cbr\u003eLeader: Siddharth Alexander\u003cbr\u003eLevel: 3\u003cbr\u003eHigh Level Description of Team:\u003cbr\u003eThe MIP team centrally manages IP\u2019s High Quality Liquid Asset (HQLA) portfo\u003cbr\u003elios, solutions, and risk management activities, in addition to managing in\u003cbr\u003eterest rate and cross-currency risk for the entire Investment Portfolio. Wi\u003cbr\u003eth a focus on long term investing, MIP seeks to optimize revenue opportunit\u003cbr\u003ey while prudently helping IP manage its constraints."}, {"borderWidthSelected": 20, "color": "blue", "font": {"color": "navy"}, "group": 1, "id": "Finance", "label": "Finance", "labelHighlightBold": true, "level": 1, "physics": true, "shape": "dot", "size": 30, "title": "Team: Finance\u003cbr\u003eLeader: Mike Santomassimo\u003cbr\u003eLevel: 1"}, {"borderWidthSelected": 20, "color": "teal", "font": {"color": "navy"}, "id": "Infrastructure", "label": "Infrastructure", "labelHighlightBold": true, "level": 2, "physics": true, "shape": "dot", "size": 21, "title": "Team: Infrastructure\u003cbr\u003eLeader: Meredith Innes\u003cbr\u003eLevel: 2"}, {"color": "mediumspringgreen", "font": {"color": "navy"}, "group": 4, "id": "Financial Forecasting and Reporting", "label": "Financial Forecasting and Reporting", "level": 4, "physics": true, "shape": "dot", "size": 9, "title": "Team: Financial Forecasting and Reporting\u003cbr\u003eLeader: Jennifer Zelnick\u003cbr\u003eLevel: 4\u003cbr\u003eCo-Team(s): Macro Investment Portfolio, MBS Strategy\u003cbr\u003eHigh Level Description of Team:\u003cbr\u003eThe Financial Forecasting \u0026 Reporting team centrally manages income and bal\u003cbr\u003eance sheet forecasting and portfolio level reporting"}, {"color": "mediumspringgreen", "font": {"color": "navy"}, "id": "MBS Strategy", "label": "MBS Strategy", "level": 4, "physics": true, "shape": "dot", "size": 21, "title": "Team: MBS Strategy\u003cbr\u003eLeader: Tim Mullins\u003cbr\u003eLevel: 2\u003cbr\u003eCo-Team(s): Infrastructure\u003cbr\u003eHigh Level Description of Team:\u003cbr\u003eTeam focuses on mortgage strategy and modeling, and serves as a key partner\u003cbr\u003e to PSAI teams on MBS and prepayment modeling, forecasting, and stress test\u003cbr\u003eing, while participating in Mortgage COE efforts."}, {"color": "lightsteelblue", "font": {"color": "navy"}, "group": 5, "id": "Interest Rate Analytics", "label": "Interest Rate Analytics", "level": 5, "physics": true, "shape": "dot", "size": 6, "title": "Team: Interest Rate Analytics\u003cbr\u003eLeader: Andy Sheshai\u003cbr\u003eLevel: 5\u003cbr\u003eCo-Team(s): MBS Strategy"}, {"borderWidthSelected": 20, "color": "mediumspringgreen", "font": {"color": "navy"}, "id": "Trading", "label": "Trading", "labelHighlightBold": true, "level": 4, "physics": true, "shape": "dot", "size": 9, "title": "Team: Trading\u003cbr\u003eLeader: Alex Papson\u003cbr\u003eLevel: 4\u003cbr\u003eHigh Level Description of Team:\u003cbr\u003eThe Trading team manages a centralized, street-facing trading desk with the\u003cbr\u003e ability to offer coordinated execution of all cash and derivatives for the\u003cbr\u003e portfolio, as well as for other key partners within the enterprise."}, {"borderWidthSelected": 20, "color": "mediumspringgreen", "font": {"color": "navy"}, "id": "Reinsurance and BOLI", "label": "Reinsurance and BOLI", "labelHighlightBold": true, "level": 4, "physics": true, "shape": "dot", "size": 9, "title": "Team: Reinsurance and BOLI\u003cbr\u003eLeader: Chris Livingston\u003cbr\u003eLevel: 4\u003cbr\u003eHigh Level Description of Team:\u003cbr\u003eThe Reinsurance \u0026 BOLI Team manages $25.6B2in reinsurance agreements consis\u003cbr\u003eting of Life Surplus Relief and VA solutions and $19.7B of BOLI assets:"}, {"borderWidthSelected": 20, "color": "mediumspringgreen", "font": {"color": "navy"}, "id": "MIP Cash", "label": "MIP Cash", "labelHighlightBold": true, "level": 4, "physics": true, "shape": "dot", "size": 9, "title": "Team: MIP Cash\u003cbr\u003eLeader: Joe York\u003cbr\u003eLevel: 4\u003cbr\u003eHigh Level Description of Team:\u003cbr\u003eTeam manages a portfolio of HQLA fixed income investments to achieve liquid\u003cbr\u003eity, interest rate risk management, and earnings objectives on behalf of Co\u003cbr\u003erporate ALCO. MIP-Cash also manages certain WFC equity activities including\u003cbr\u003e share repurchases."}, {"borderWidthSelected": 20, "color": "lightsteelblue", "font": {"color": "navy"}, "id": "Quantitative Strategy and Analytics", "label": "Quantitative Strategy and Analytics", "labelHighlightBold": true, "level": 5, "physics": true, "shape": "dot", "size": 6, "title": "Team: Quantitative Strategy and Analytics\u003cbr\u003eLeader: David Kraybill\u003cbr\u003eLevel: 5"}, {"borderWidthSelected": 20, "color": "lightsteelblue", "font": {"color": "navy"}, "id": "Strategic Initiatives", "label": "Strategic Initiatives", "labelHighlightBold": true, "level": 5, "physics": true, "shape": "dot", "size": 6, "title": "Team: Strategic Initiatives\u003cbr\u003eLeader: Liz Peters\u003cbr\u003eLevel: 5"}]);
+        edges = new vis.DataSet([{"color": "black", "from": "Business Products and Tools", "to": "Portfolio Stategy, Analytics, and Infrastructure"}, {"color": "cyan", "from": "CLO Portfolio", "label": "co-team", "to": "Portfolio Strategy, Analytics, and Infrastructure"}, {"color": "black", "from": "CLO Portfolio", "to": "Credit Investment Portfolio"}, {"color": "cyan", "from": "CLO Underwriting", "label": "co-team", "to": "Portfolio Strategy, Analytics, and Infrastructure"}, {"color": "black", "from": "CLO Underwriting", "to": "Credit Investment Portfolio"}, {"color": "cyan", "from": "Credit Investment Portfolio", "label": "co-team", "to": "IP Hedge"}, {"color": "cyan", "from": "Credit Investment Portfolio", "label": "co-team", "to": "Portfolio Strategy, Analytics, and Infrastructure"}, {"color": "cyan", "from": "Credit Investment Portfolio", "label": "co-team", "to": "Derivatives Trading and Hedging Strategy"}, {"color": "black", "from": "Credit Investment Portfolio", "to": "Investment Portfolio"}, {"color": "black", "from": "Credit Investment Portfolio", "to": "Wholesale Banking"}, {"color": "black", "from": "Credit Investment Portfolio", "to": "Municipals - General Obligations"}, {"color": "black", "from": "Credit Investment Portfolio", "to": "Municipals - Revenue Back"}, {"color": "black", "from": "Credit Investment Portfolio", "to": "Other ABS"}, {"color": "black", "from": "Derivatives Trading and Hedging Strategy", "to": "Macro Investment Portfolio"}, {"color": "black", "from": "Finance", "to": "Investment Portfolio"}, {"color": "black", "from": "Finance", "to": "Infrastructure"}, {"color": "cyan", "from": "Financial Forecasting and Reporting", "label": "co-team", "to": "Macro Investment Portfolio"}, {"color": "cyan", "from": "Financial Forecasting and Reporting", "label": "co-team", "to": "MBS Strategy"}, {"color": "black", "from": "Financial Forecasting and Reporting", "to": "Investment Portfolio"}, {"color": "cyan", "from": "Infrastructure", "label": "co-team", "to": "Investment Portfolio"}, {"color": "cyan", "from": "Interest Rate Analytics", "label": "co-team", "to": "MBS Strategy"}, {"color": "black", "from": "Interest Rate Analytics", "to": "Portfolio Stategy, Analytics, and Infrastructure"}, {"color": "black", "from": "Investment Portfolio", "to": "Wholesale Banking"}, {"color": "black", "from": "Investment Portfolio", "to": "Macro Investment Portfolio"}, {"color": "black", "from": "Investment Portfolio", "to": "Trading"}, {"color": "black", "from": "Investment Portfolio", "to": "Portfolio Strategy, Analytics, and Infrastructure"}, {"color": "black", "from": "Investment Portfolio", "to": "Reinsurance and BOLI"}, {"color": "cyan", "from": "IP Hedge", "label": "co-team", "to": "Macro Investment Portfolio"}, {"color": "cyan", "from": "IP Hedge", "label": "co-team", "to": "MBS Strategy"}, {"color": "black", "from": "IP Hedge", "to": "Trading"}, {"color": "black", "from": "Macro Investment Portfolio", "to": "MBS Strategy"}, {"color": "black", "from": "Macro Investment Portfolio", "to": "MIP Cash"}, {"color": "cyan", "from": "MBS Strategy", "label": "co-team", "to": "Portfolio Strategy, Analytics, and Infrastructure"}, {"color": "cyan", "from": "MBS Strategy", "label": "co-team", "to": "MIP Cash"}, {"color": "cyan", "from": "MIP Cash", "label": "co-team", "to": "Trading"}, {"color": "cyan", "from": "MIP Cash", "label": "co-team", "to": "IP Hedge"}, {"color": "cyan", "from": "Municipals - General Obligations", "label": "co-team", "to": "Portfolio Strategy, Analytics, and Infrastructure"}, {"color": "cyan", "from": "Municipals - Revenue Back", "label": "co-team", "to": "Portfolio Strategy, Analytics, and Infrastructure"}, {"color": "cyan", "from": "Other ABS", "label": "co-team", "to": "Portfolio Strategy, Analytics, and Infrastructure"}, {"color": "cyan", "from": "Portfolio Stategy, Analytics, and Infrastructure", "label": "co-team", "to": "MBS Strategy"}, {"color": "cyan", "from": "Portfolio Stategy, Analytics, and Infrastructure", "label": "co-team", "to": "CLO Portfolio"}, {"color": "cyan", "from": "Portfolio Stategy, Analytics, and Infrastructure", "label": "co-team", "to": "Reinsurance and BOLI"}, {"color": "black", "from": "Portfolio Stategy, Analytics, and Infrastructure", "to": "Quantitative Strategy and Analytics"}, {"color": "black", "from": "Portfolio Stategy, Analytics, and Infrastructure", "to": "Strategic Initiatives"}, {"color": "cyan", "from": "Portfolio Strategy, Analytics, and Infrastructure", "label": "co-team", "to": "Reinsurance and BOLI"}, {"color": "cyan", "from": "Quantitative Strategy and Analytics", "label": "co-team", "to": "MBS Strategy"}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
