@@ -1,0 +1,62 @@
+Source,Leader,Target,Team type,Level,Color,HL_description
+Wholesale Banking,Perry Pelos,Investment Portfolio,Team,5,black,n/a
+Finance,Mike Santomassimo,Investment Portfolio,Team,5,Black,n/a
+Finance,Mike Santomassimo,Infrastructure,Team,5,black,n/a
+Investment Portfolio,Tim Mullins,Finance,Team,4,blue,"The Wells Fargo Investment Portfolio (“IP”) comprises the Credit Investment Portfolio (CIP), the Macro Investment Portfolio (MIP), and Reinsurance business. Reporting to Enterprise Finance, IP manages the entire $454.3B1portfolio of AFS and HTM investments and cash"
+Investment Portfolio,Tim Mullins,ALM Risk,Partner,4,blue,"The Wells Fargo Investment Portfolio (“IP”) comprises the Credit Investment Portfolio (CIP), the Macro Investment Portfolio (MIP), and Reinsurance business. Reporting to Enterprise Finance, IP manages the entire $454.3B1portfolio of AFS and HTM investments and cash"
+ALM Risk,n/a,Investment Portfolio,Partner,4,blue,n/a
+Investment Portfolio,Tim Mullins,Technology,Partner,4,blue,"The Wells Fargo Investment Portfolio (“IP”) comprises the Credit Investment Portfolio (CIP), the Macro Investment Portfolio (MIP), and Reinsurance business. Reporting to Enterprise Finance, IP manages the entire $454.3B1portfolio of AFS and HTM investments and cash"
+Technology,n/a,Investment Portfolio,Partner,4,blue,n/a
+Investment Portfolio,Tim Mullins,IP Control,Partner,4,blue,"The Wells Fargo Investment Portfolio (“IP”) comprises the Credit Investment Portfolio (CIP), the Macro Investment Portfolio (MIP), and Reinsurance business. Reporting to Enterprise Finance, IP manages the entire $454.3B1portfolio of AFS and HTM investments and cash"
+IP Control,n/a,Investment Portfolio,Partner,4,blue,n/a
+Investment Portfolio,Tim Mullins,Financial Planning and Analysis,Partner,4,blue,"The Wells Fargo Investment Portfolio (“IP”) comprises the Credit Investment Portfolio (CIP), the Macro Investment Portfolio (MIP), and Reinsurance business. Reporting to Enterprise Finance, IP manages the entire $454.3B1portfolio of AFS and HTM investments and cash"
+Financial Planning and Analysis,Tim Mullins,Investment Portfolio,Partner,4,blue,n/a
+Investment Portfolio,Tim Mullins,Securites Operation and Accounting,Partner,4,blue,"The Wells Fargo Investment Portfolio (“IP”) comprises the Credit Investment Portfolio (CIP), the Macro Investment Portfolio (MIP), and Reinsurance business. Reporting to Enterprise Finance, IP manages the entire $454.3B1portfolio of AFS and HTM investments and cash"
+Securites Operation and Accounting,Tim Mullins,Investment Portfolio,Partner,4,blue,n/a
+Investment Portfolio,Tim Mullins,Wholesale Banking,Team,4,blue,n/a
+Investment Portfolio,Tim Mullins,Infrastructure,Co-Team,4,blue,n/a
+Infrastructure,Meredith Innes,Finance,Team,4,blue,n/a
+Macro Investment Portfolio,Siddharth Alexander,Investment Portfolio,Team,4,blue,"The MIP team centrally manages IP’s High Quality Liquid Asset (HQLA) portfolios, solutions, and risk management activities, in addition to managing interest rate and cross-currency risk for the entire Investment Portfolio. With a focus on long term investing, MIP seeks to optimize revenue opportunity while prudently helping IP manage its constraints."
+Macro Investment Portfolio,Siddharth Alexander,IP Hedge,Co-Team,4,blue,"The MIP team centrally manages IP’s High Quality Liquid Asset (HQLA) portfolios, solutions, and risk management activities, in addition to managing interest rate and cross-currency risk for the entire Investment Portfolio. With a focus on long term investing, MIP seeks to optimize revenue opportunity while prudently helping IP manage its constraints."
+MBS Strategy,Krupal Bhatt,Macro Investment Portfolio,Team,4,blue,"Team focuses on mortgage strategy and modeling, and serves as a key partner to PSAI teams on MBS and prepayment modeling, forecasting, and stress testing, while participating in Mortgage COE efforts."
+MBS Strategy,Krupal Bhatt,Quantitative Analytics,Partner,4,blue,"Team focuses on mortgage strategy and modeling, and serves as a key partner to PSAI teams on MBS and prepayment modeling, forecasting, and stress testing, while participating in Mortgage COE efforts."
+MBS Strategy,Krupal Bhatt,"Portfolio Strategy, Analytics, and Infrastructure",Co-Team,4,blue,n/a
+MBS Strategy,Krupal Bhatt,MIP Cash,Co-Team,4,blue,n/a
+MBS Strategy,Krupal Bhatt,IP Hedge,Co-Team,4,blue,n/a
+MIP Cash,Joe York,Macro Investment Portfolio,Team,4,blue,"Team manages a portfolio of HQLA fixed income investments to achieve liquidity, interest rate risk management, and earnings objectives on behalf of Corporate ALCO. MIP-Cash also manages certain WFC equity activities including share repurchases."
+MIP Cash,Joe York,IP Hedge,Co-Team,4,blue,n/a
+MIP Cash,Joe York,Trading,Co-Team,4,blue,n/a
+Derivatives Trading and Hedging Strategy,(Placeholder),Macro Investment Portfolio,Team,4,blue,"Team focuses on derivatives strategy and execution, and serves as a key partner to CIP, providing macro-level input on portfolio management activities."
+Derivatives Trading and Hedging Strategy,(Placeholder),Credit Investment Portfolio,Co-Team,4,blue,"Team focuses on derivatives strategy and execution, and serves as a key partner to CIP, providing macro-level input on portfolio management activities."
+Trading,Alex Papson,Investment Portfolio,Team,4,blue,"The Trading team manages a centralized, street-facing trading desk with the ability to offer coordinated execution of all cash and derivatives for the portfolio, as well as for other key partners within the enterprise."
+Trading,Alex Papson,MIP Cash,Co-Team,4,blue,"The Trading team manages a centralized, street-facing trading desk with the ability to offer coordinated execution of all cash and derivatives for the portfolio, as well as for other key partners within the enterprise."
+IP Hedge,Jamie Patton,Trading,Team,4,blue,n/a
+Credit Investment Portfolio,Cecilia Fork,Investment Portfolio,Team,4,blue,"The CIP team centrally manages all credit-sensitive, fixed income investments, solutions and risk management activities for our public-side portfolio. As a result of the November IP reorg, CIP is now aligned into five asset class teams: the Municipals - General Obligations team, which will manage CIP's GO Muni portfolio; the Municipals - Revenue-Backed team, which will manage CIP's revenue-backed Muni portfolio; the CLO team, which will manage CIP's CLO portfolio; the Other ABS team, which will manage CIP's non-CLO structured products portfolios; and the CLO Underwriting team, which will manage ongoing CLO collateral surveillance and the credit monitoring of the Corporates portfolio as it naturally runs off over time."
+Credit Investment Portfolio,Cecilia Fork,"Portfolio Strategy, Analytics, and Infrastructure",Co-Team,4,blue,n/a
+Credit Investment Portfolio,Cecilia Fork,IP Hedge,Co-Team,4,blue,n/a
+CLO Portfolio,Cecilia Fork,Credit Investment Portfolio,Team,4,blue,n/a
+CLO Portfolio,Cecilia Fork,"Portfolio Strategy, Analytics, and Infrastructure",Co-team,4,blue,n/a
+Municipals - General Obligations,Matt Koch,Credit Investment Portfolio,Team,4,blue,n/a
+Municipals - General Obligations,Matt Koch,"Portfolio Strategy, Analytics, and Infrastructure",Co-Team,4,blue,n/a
+Municipals - Revenue Back,Matt Pielert,Credit Investment Portfolio,Team,4,blue,n/a
+Municipals - Revenue Back,Matt Pielert,"Portfolio Strategy, Analytics, and Infrastructure",Co-Team,4,blue,n/a
+Other ABS,Fox Walton,Credit Investment Portfolio,Team,4,blue,n/a
+Other ABS,Fox Walton,"Portfolio Strategy, Analytics, and Infrastructure",Co-Team,4,blue,n/a
+CLO Underwriting,Casey Zeman,Credit Investment Portfolio,Team,4,blue,n/a
+CLO Underwriting,Casey Zeman,"Portfolio Strategy, Analytics, and Infrastructure",Co-Team,4,blue,n/a
+"Portfolio Strategy, Analytics, and Infrastructure",Steve De Salvo,Investment Portfolio,Team,4,blue,"The PSAI Team centrally manages IP’s analytics, including stress testing, sensitivity analytics, and optimizing investment decision making within capital, liquidity and risk management constraints. The team also provides standardized processes and tools for use across IP."
+Interest Rate Analytics,Andy Sheshai,"Portfolio Stategy, Analytics, and Infrastructure",Team,4,blue,n/a
+"Portfolio Stategy, Analytics, and Infrastructure",Steve De Salvo,Interest Rate Analytics,Team,4,blue,n/a
+Interest Rate Analytics,Andy Sheshai,MBS Strategy,Co-Team,4,blue,n/a
+MBS Strategy,Krupal Bhatt,Interest Rate Analytics,Co-Team,4,blue,n/a
+Quantitative Strategy and Analytics,David Kraybill,"Portfolio Stategy, Analytics, and Infrastructure",Team,4,blue,n/a
+Strategic Initiatives,Liz Peters,"Portfolio Stategy, Analytics, and Infrastructure",Team,4,blue,n/a
+Business Products and Tools,Tim Wright,"Portfolio Stategy, Analytics, and Infrastructure",Team,4,blue,n/a
+Reinsurance and BOLI,Chris Livingston,Investment Portfolio,Team,4,blue,The Reinsurance & BOLI Team manages $25.6B2in reinsurance agreements consisting of Life Surplus Relief and VA solutions and $19.7B of BOLI assets:
+Reinsurance and BOLI,Chris Livingston,"Portfolio Strategy, Analytics, and Infrastructure",Co-Team,4,blue,The Reinsurance & BOLI Team manages $25.6B2in reinsurance agreements consisting of Life Surplus Relief and VA solutions and $19.7B of BOLI assets:
+Financial Forecasting and Reporting,Jennifer Zelnick,Investment Portfolio,Team,4,blue,The Financial Forecasting & Reporting team centrally manages income and balance sheet forecasting and portfolio level reporting
+Financial Forecasting and Reporting,Jennifer Zelnick,MBS Strategy,Co-Team,4,blue,The Financial Forecasting & Reporting team centrally manages income and balance sheet forecasting and portfolio level reporting
+Financial Forecasting and Reporting,Jennifer Zelnick,Macro Investment Portfolio,Co-Team,4,blue,The Financial Forecasting & Reporting team centrally manages income and balance sheet forecasting and portfolio level reporting
+Quantitative Analytics,Jean-Christophe Chehikian,Consumer Lending,Team,4,blue,Forecasting and Modeling MBS products
+Consumer Lending,n/a,Quantitative Analytics,Team,4,blue,
+Quantitative Analytics,Jean-Christophe Chehikian,MBS Strategy,Partner,4,blue,Forecasting and Modeling MBS products
